@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard กีฬาสี 2567 - เปตอง</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #4CAF50, #2196F3);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .scoreboard {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .team {
+            margin: 20px 0;
+        }
+
+        .team-name {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .team-name input {
+            font-size: 1.2em;
+            padding: 5px;
+            text-align: center;
+            border: 2px solid #FFF;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .score {
+            font-size: 3em;
+            margin: 10px 0;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background: #FF5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #E64A19;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            font-size: 1em;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="scoreboard">
+        <h1>Scoreboard เปตอง กีฬาสี 2567</h1>
+        <div class="team">
+            <div class="team-name">
+                ทีม 1: <input type="text" id="team1-name" placeholder="ใส่ชื่อทีม" value="ทีม A">
+            </div>
+            <div class="score" id="team1-score">0</div>
+            <div class="controls">
+                <button class="button" onclick="changeScore('team1', 1)">+1</button>
+                <button class="button" onclick="changeScore('team1', -1)">-1</button>
+            </div>
+        </div>
+        <hr>
+        <div class="team">
+            <div class="team-name">
+                ทีม 2: <input type="text" id="team2-name" placeholder="ใส่ชื่อทีม" value="ทีม B">
+            </div>
+            <div class="score" id="team2-score">0</div>
+            <div class="controls">
+                <button class="button" onclick="changeScore('team2', 1)">+1</button>
+                <button class="button" onclick="changeScore('team2', -1)">-1</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2567 กฟฉ.1 | ออกแบบเพื่อการแข่งขันกีฬาเปตอง
+    </footer>
+
+    <script>
+        function changeScore(team, amount) {
+            const scoreElement = document.getElementById(`${team}-score`);
+            let currentScore = parseInt(scoreElement.textContent, 10);
+            currentScore = Math.max(0, currentScore + amount); // ไม่ให้คะแนนติดลบ
+            scoreElement.textContent = currentScore;
+        }
+    </script>
+</body>
+</html>
