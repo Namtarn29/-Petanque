@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoreboard กีฬาสี 2567 กฟฉ.1 เปตอง</title>
     <style>
+        @font-face {
+            font-family: 'CS PRAJAD';
+            src: url('https://example.com/cs-prajad.ttf') format('truetype'); /* Replace with actual URL */
+        }
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'CS PRAJAD', sans-serif;
             background: linear-gradient(to bottom, #005f99, #ffd700);
             margin: 0;
             padding: 0;
@@ -28,7 +32,11 @@
             color: #ffd700;
             font-size: 2em;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            display: block;
+            color: #ff4500;
         }
         .team-container {
             display: flex;
@@ -84,7 +92,10 @@
 </head>
 <body>
     <div class="scoreboard">
-        <h1>Scoreboard กีฬาสี 2567 กฟฉ.1 เปตอง</h1>
+        <h1>
+            Scoreboard กีฬาสี 2567 กฟฉ.1
+            <span>เปตอง</span>
+        </h1>
         <div class="team-container">
             <div class="team">
                 <div class="team-name">
@@ -108,7 +119,7 @@
             </div>
         </div>
         <footer>
-            เปตอง | กีฬาสี 2567
+            ธีม: สนามกีฬา | เปตอง | กีฬาสี 2567
         </footer>
     </div>
 
